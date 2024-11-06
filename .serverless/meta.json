@@ -6,11 +6,9 @@
     "composeOrgName": null,
     "composeServiceName": null,
     "command": [],
-    "options": {
-      "version": true
-    },
+    "options": {},
     "error": null,
-    "machineId": "3a258474e2a63c2e162fe5ace0767b4d",
+    "machineId": "2affb09654711c2a1115fd81e04cbe31",
     "serviceProviderAwsCfStackId": null,
     "serviceProviderAwsCfStackCreated": null,
     "serviceProviderAwsCfStackUpdated": null,
