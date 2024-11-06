@@ -5,10 +5,91 @@
     "isWithinCompose": false,
     "composeOrgName": null,
     "composeServiceName": null,
-    "command": [],
+    "command": [
+      "support"
+    ],
     "options": {},
     "error": null,
-    "machineId": "2affb09654711c2a1115fd81e04cbe31",
+    "machineId": "117e3336b5bb04b3eb702c3f501bfba3",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  },
+  "/Users/sateeshpenugonda/Desktop/meet/auth-server": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.7",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeServiceName": null,
+    "servicePath": "/Users/sateeshpenugonda/Desktop/meet/auth-server",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "bhavani",
+      "app": "meet",
+      "service": "auth-server",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "region": "eu-central-1",
+        "timeout": 30,
+        "environment": {
+          "CLIENT_ID": "${file(config.json):CLIENT_ID}",
+          "CLIENT_SECRET": "<REDACTED>",
+          "CALENDAR_ID": "${file(config.json):CALENDAR_ID}"
+        }
+      },
+      "functions": {
+        "getAuthURL": {
+          "handler": "handler.getAuthURL",
+          "events": [
+            {
+              "http": {
+                "path": "api/get-auth-url",
+                "method": "get"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: bhavani\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: meet\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: auth-server\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-central-1\n  timeout: 30 # optional, in seconds, default is 6\n  environment:\n    CLIENT_ID: ${file(config.json):CLIENT_ID}\n    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}\n    CALENDAR_ID: ${file(config.json):CALENDAR_ID}\n\n\nfunctions:\n  getAuthURL:\n    handler: handler.getAuthURL\n    events:\n      - http:\n          path: api/get-auth-url\n          method: get",
+    "command": [
+      "invoke",
+      "local"
+    ],
+    "options": {
+      "function": "getAuthURL"
+    },
+    "error": {
+      "message": "Cannot resolve '${file(config.json):CLIENT_ID}' variable at 'provider.environment.CLIENT_ID'. No value is available for this variable, and no default value was provided. Please check your variable definitions or provide a default value.",
+      "stack": "Error: Cannot resolve '${file(config.json):CLIENT_ID}' variable at 'provider.environment.CLIENT_ID'. No value is available for this variable, and no default value was provided. Please check your variable definitions or provide a default value.\n    at _ResolverManager.resolve (file:///Users/sateeshpenugonda/.serverless/releases/4.4.7/package/dist/sf-core.js:693:56026)\n    at async #handlePlaceholderNode (file:///Users/sateeshpenugonda/.serverless/releases/4.4.7/package/dist/sf-core.js:693:54456)\n    at async file:///Users/sateeshpenugonda/.serverless/releases/4.4.7/package/dist/sf-core.js:693:52448\n    at async processNodeAndHandleCompletion (file:///Users/sateeshpenugonda/.serverless/releases/4.4.7/package/dist/sf-core.js:693:43090)",
+      "code": "MISSING_VARIABLE_RESULT"
+    },
+    "machineId": "117e3336b5bb04b3eb702c3f501bfba3",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "3031aa58-e5f1-4c97-8e9d-ce8d6dd110b4",
+    "orgName": "bhavani",
+    "userId": "NHZLd6BgVSKWpLqdmW",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": false,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "QqfDQpzbQDGVC9kJDD",
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "bhavani",
+    "subscription": null,
+    "userEmail": "bhavani0202@gmail.com",
     "serviceProviderAwsCfStackId": null,
     "serviceProviderAwsCfStackCreated": null,
     "serviceProviderAwsCfStackUpdated": null,
