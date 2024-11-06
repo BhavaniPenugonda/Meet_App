@@ -36,6 +36,7 @@
                       "LogGroupName": "/aws/lambda/auth-server-dev-getAuthURL"
                     }
                   },
+                  "GetAccessTokenLogGroup": "<REDACTED>",
                   "IamRoleLambdaExecution": {
                     "Type": "AWS::IAM::Role",
                     "Properties": {
@@ -119,7 +120,7 @@
                     "Properties": {
                       "Code": {
                         "S3Bucket": "serverless-framework-deployments-eu-central-1-5407ad46-d6b0",
-                        "S3Key": "serverless/auth-server/dev/1730902082506-2024-11-06T14:08:02.506Z/auth-server.zip"
+                        "S3Key": "serverless/auth-server/dev/1730906241674-2024-11-06T15:17:21.674Z/auth-server.zip"
                       },
                       "Handler": "handler.getAuthURL",
                       "Runtime": "nodejs20.x",
@@ -144,16 +145,18 @@
                       "GetAuthURLLogGroup"
                     ]
                   },
-                  "GetAuthURLLambdaVersionhpwVFfYY4BHMbBdgkqUpeZtXdWwCYkG0NjXtN4ddRVA": {
+                  "GetAccessTokenLambdaFunction": "<REDACTED>",
+                  "GetAuthURLLambdaVersion9RC0funZGjhUtthQqsnp0VWN2IpooBRWjpAH4CPWHA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "GetAuthURLLambdaFunction"
                       },
-                      "CodeSha256": "NjDHdOWKUSXgbQ03dbBnLa5hX/aQInNO55b3QUeW0gk="
+                      "CodeSha256": "MQnx3tgbe8de41osz50XY+svPkwKyymDmOCqqKE3jGU="
                     }
                   },
+                  "GetAccessTokenLambdaVersionpNrPyQE3dzEI4VJveC96MYOOoRLUaoctxLN0YGDc": "<REDACTED>",
                   "ApiGatewayRestApi": {
                     "Type": "AWS::ApiGateway::RestApi",
                     "Properties": {
@@ -193,6 +196,8 @@
                       }
                     }
                   },
+                  "ApiGatewayResourceApiToken": "<REDACTED>",
+                  "ApiGatewayResourceApiTokenCodeVar": "<REDACTED>",
                   "ApiGatewayMethodApiGetDashauthDashurlGet": {
                     "Type": "AWS::ApiGateway::Method",
                     "Properties": {
@@ -239,7 +244,8 @@
                       "GetAuthURLLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1730902071058": {
+                  "ApiGatewayMethodApiTokenCodeVarGet": "<REDACTED>",
+                  "ApiGatewayDeployment1730906232196": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -248,7 +254,8 @@
                       "StageName": "dev"
                     },
                     "DependsOn": [
-                      "ApiGatewayMethodApiGetDashauthDashurlGet"
+                      "ApiGatewayMethodApiGetDashauthDashurlGet",
+                      "ApiGatewayMethodApiTokenCodeVarGet"
                     ]
                   },
                   "GetAuthURLLambdaPermissionApiGateway": {
@@ -287,7 +294,8 @@
                         ]
                       }
                     }
-                  }
+                  },
+                  "GetAccessTokenLambdaPermissionApiGateway": "<REDACTED>"
                 },
                 "Outputs": {
                   "ServerlessDeploymentBucketName": {
@@ -299,12 +307,13 @@
                   "GetAuthURLLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "GetAuthURLLambdaVersionhpwVFfYY4BHMbBdgkqUpeZtXdWwCYkG0NjXtN4ddRVA"
+                      "Ref": "GetAuthURLLambdaVersion9RC0funZGjhUtthQqsnp0VWN2IpooBRWjpAH4CPWHA"
                     },
                     "Export": {
                       "Name": "sls-auth-server-dev-GetAuthURLLambdaFunctionQualifiedArn"
                     }
                   },
+                  "GetAccessTokenLambdaFunctionQualifiedArn": "<REDACTED>",
                   "ServiceEndpoint": {
                     "Description": "URL of the service endpoint",
                     "Value": {
@@ -353,8 +362,9 @@
                 "timeout": 30,
                 "runtime": "nodejs20.x",
                 "vpc": {},
-                "versionLogicalId": "GetAuthURLLambdaVersionhpwVFfYY4BHMbBdgkqUpeZtXdWwCYkG0NjXtN4ddRVA"
-              }
+                "versionLogicalId": "GetAuthURLLambdaVersion9RC0funZGjhUtthQqsnp0VWN2IpooBRWjpAH4CPWHA"
+              },
+              "getAccessToken": "<REDACTED>"
             }
           },
           "configFileDirPath": "/Users/sateeshpenugonda/Desktop/meet/auth-server",
@@ -403,6 +413,7 @@
                 "LogGroupName": "/aws/lambda/auth-server-dev-getAuthURL"
               }
             },
+            "GetAccessTokenLogGroup": "<REDACTED>",
             "IamRoleLambdaExecution": {
               "Type": "AWS::IAM::Role",
               "Properties": {
@@ -486,7 +497,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-eu-central-1-5407ad46-d6b0",
-                  "S3Key": "serverless/auth-server/dev/1730902082506-2024-11-06T14:08:02.506Z/auth-server.zip"
+                  "S3Key": "serverless/auth-server/dev/1730906241674-2024-11-06T15:17:21.674Z/auth-server.zip"
                 },
                 "Handler": "handler.getAuthURL",
                 "Runtime": "nodejs20.x",
@@ -511,16 +522,18 @@
                 "GetAuthURLLogGroup"
               ]
             },
-            "GetAuthURLLambdaVersionhpwVFfYY4BHMbBdgkqUpeZtXdWwCYkG0NjXtN4ddRVA": {
+            "GetAccessTokenLambdaFunction": "<REDACTED>",
+            "GetAuthURLLambdaVersion9RC0funZGjhUtthQqsnp0VWN2IpooBRWjpAH4CPWHA": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetAuthURLLambdaFunction"
                 },
-                "CodeSha256": "NjDHdOWKUSXgbQ03dbBnLa5hX/aQInNO55b3QUeW0gk="
+                "CodeSha256": "MQnx3tgbe8de41osz50XY+svPkwKyymDmOCqqKE3jGU="
               }
             },
+            "GetAccessTokenLambdaVersionpNrPyQE3dzEI4VJveC96MYOOoRLUaoctxLN0YGDc": "<REDACTED>",
             "ApiGatewayRestApi": {
               "Type": "AWS::ApiGateway::RestApi",
               "Properties": {
@@ -560,6 +573,8 @@
                 }
               }
             },
+            "ApiGatewayResourceApiToken": "<REDACTED>",
+            "ApiGatewayResourceApiTokenCodeVar": "<REDACTED>",
             "ApiGatewayMethodApiGetDashauthDashurlGet": {
               "Type": "AWS::ApiGateway::Method",
               "Properties": {
@@ -606,7 +621,8 @@
                 "GetAuthURLLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1730902071058": {
+            "ApiGatewayMethodApiTokenCodeVarGet": "<REDACTED>",
+            "ApiGatewayDeployment1730906232196": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -615,7 +631,8 @@
                 "StageName": "dev"
               },
               "DependsOn": [
-                "ApiGatewayMethodApiGetDashauthDashurlGet"
+                "ApiGatewayMethodApiGetDashauthDashurlGet",
+                "ApiGatewayMethodApiTokenCodeVarGet"
               ]
             },
             "GetAuthURLLambdaPermissionApiGateway": {
@@ -654,7 +671,8 @@
                   ]
                 }
               }
-            }
+            },
+            "GetAccessTokenLambdaPermissionApiGateway": "<REDACTED>"
           },
           "Outputs": {
             "ServerlessDeploymentBucketName": {
@@ -666,12 +684,13 @@
             "GetAuthURLLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetAuthURLLambdaVersionhpwVFfYY4BHMbBdgkqUpeZtXdWwCYkG0NjXtN4ddRVA"
+                "Ref": "GetAuthURLLambdaVersion9RC0funZGjhUtthQqsnp0VWN2IpooBRWjpAH4CPWHA"
               },
               "Export": {
                 "Name": "sls-auth-server-dev-GetAuthURLLambdaFunctionQualifiedArn"
               }
             },
+            "GetAccessTokenLambdaFunctionQualifiedArn": "<REDACTED>",
             "ServiceEndpoint": {
               "Description": "URL of the service endpoint",
               "Value": {
@@ -720,11 +739,12 @@
           "timeout": 30,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetAuthURLLambdaVersionhpwVFfYY4BHMbBdgkqUpeZtXdWwCYkG0NjXtN4ddRVA"
-        }
+          "versionLogicalId": "GetAuthURLLambdaVersion9RC0funZGjhUtthQqsnp0VWN2IpooBRWjpAH4CPWHA"
+        },
+        "getAccessToken": "<REDACTED>"
       }
     },
-    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: bhavani\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: meet\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: auth-server\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-central-1\n  timeout: 30 # optional, in seconds, default is 6\n  environment:\n    CLIENT_ID: ${file(config.json):CLIENT_ID}\n    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}\n    CALENDAR_ID: ${file(config.json):CALENDAR_ID}\n\n\nfunctions:\n  getAuthURL:\n    handler: handler.getAuthURL\n    events:\n      - http:\n          path: api/get-auth-url\n          method: get",
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: bhavani\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: meet\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: auth-server\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: eu-central-1\n  timeout: 30 # optional, in seconds, default is 6\n  environment:\n    CLIENT_ID: ${file(config.json):CLIENT_ID}\n    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}\n    CALENDAR_ID: ${file(config.json):CALENDAR_ID}\n\n\nfunctions:\n  getAuthURL:\n    handler: handler.getAuthURL\n    events:\n      - http:\n          path: api/get-auth-url\n          method: get\n\n  getAccessToken:\n    handler: handler.getAccessToken\n    events:\n      - http:\n          path: api/token/{code}\n          method: get  ",
     "command": [
       "deploy"
     ],
@@ -763,12 +783,18 @@
     "serviceUniqueId": "arn:aws:cloudformation:eu-central-1:124355639642:stack/auth-server-dev/968e6ef0-9c48-11ef-83c8-0a168878a029",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-central-1:124355639642:stack/auth-server-dev/968e6ef0-9c48-11ef-83c8-0a168878a029",
     "serviceProviderAwsCfStackCreated": "2024-11-06T14:08:25.296Z",
-    "serviceProviderAwsCfStackUpdated": null,
-    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackUpdated": "2024-11-06T15:17:49.033Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
+        "OutputKey": "GetAccessTokenLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-central-1:124355639642:function:auth-server-dev-getAccessToken:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-auth-server-dev-GetAccessTokenLambdaFunctionQualifiedArn"
+      },
+      {
         "OutputKey": "GetAuthURLLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:eu-central-1:124355639642:function:auth-server-dev-getAuthURL:1",
+        "OutputValue": "arn:aws:lambda:eu-central-1:124355639642:function:auth-server-dev-getAuthURL:2",
         "Description": "Current Lambda function version",
         "ExportName": "sls-auth-server-dev-GetAuthURLLambdaFunctionQualifiedArn"
       },
