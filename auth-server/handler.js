@@ -78,7 +78,7 @@ module.exports.getAccessToken = async (event) => {
 module.exports.getCalendarEvents = async (event) => {
 
   const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
-  oAuth2Client.setCredentials({ access_token });
+  oAuth2Client.setCredentials({access_token});
 
  return  new Promise((resolve, reject) => {
     calendar.events.list(
