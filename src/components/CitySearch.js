@@ -1,5 +1,5 @@
 import { useState } from "react";
-const CitySearch = () => {
+const CitySearch = ({ allLocations }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   return (
     <div id="city-search">
