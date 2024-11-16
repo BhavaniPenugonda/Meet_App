@@ -37,7 +37,7 @@ test('renders event start time', async() => {
 // Show Details button
 test('render event details button', () => {
     
-    const detailButton = screen.queryByText('Show Details');
+    const detailButton = EventComponent.queryByText('Show Details');
     expect(detailButton).toBeInTheDocument();
 });
 
