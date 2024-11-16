@@ -17,7 +17,7 @@ describe('<Event /> component', () => {
     test('render event title', async () => {   
       const allEvents = await getEvents();
       EventComponent.rerender(<Event event={allEvents[0]} />);
-        expect(screen.queryByText(allEvents[0].summary)).toBeInTheDocument();
+        expect(screen.getByText(allEvents[0].summary)).toBeInTheDocument();
     }); 
   
     test('render event location', async () => {   
@@ -29,7 +29,7 @@ describe('<Event /> component', () => {
 test('renders event start time', async() => {
     const allEvents = await getEvents();
     EventComponent.rerender(<Event event={allEvents[0]} />);
-    expect(screen.getByText(allEvents[0]).start.dateTime).toBeInTheDocument();
+    expect(screen.getByText(allEvents[0]).created).toBeInTheDocument();
 });
 
 
