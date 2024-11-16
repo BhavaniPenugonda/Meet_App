@@ -7,7 +7,7 @@ const Event = ({event}) => {
     <li
       className="event">
             <p>{event.summary}</p>
-           
+            <p>{event.created}</p>
             <p>{event.start?.dateTime}</p>
             <p>{event.end?.dateTime}</p>
             <p>{event.location}</p>
