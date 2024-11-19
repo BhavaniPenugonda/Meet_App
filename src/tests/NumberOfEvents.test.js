@@ -19,7 +19,7 @@ describe('<NumberOfEvents /> component', () => {
     expect(screen.getByRole('textbox')).toHaveValue('32');
   });
 
-  test('texbox value changes according to what user types', async () => {
+  test('textbox value changes according to what user types', async () => {
     const numberOfEvents = screen.getByRole('textbox');
     const user = userEvent.setup();
     await user.type(numberOfEvents, '{backspace}{backspace}10');
