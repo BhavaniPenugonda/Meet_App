@@ -1,8 +1,7 @@
-import { render ,within} from '@testing-library/react';
+import { render ,within,screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CitySearch from '../components/CitySearch';
 import { extractLocations, getEvents } from '../api';
-import { screen } from '@testing-library/react';
 import App from '../App';
 
 
@@ -11,7 +10,7 @@ import App from '../App';
 describe('<CitySearch /> component', () => {
   let CitySearchComponent;
   beforeEach(() => {
-    CitySearchComponent = render(<CitySearch />);
+    CitySearchComponent = render(<CitySearch allLocations={[]} />);
   });
 
   test('renders text input', () => {
