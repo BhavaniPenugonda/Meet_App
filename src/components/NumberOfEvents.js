@@ -24,6 +24,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
         Number of Events:
       <input
         type="text"
+        id="numberOfEventsInput"
         className="number"
         value={number}
         onChange={handleInputChanged}
