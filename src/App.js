@@ -12,6 +12,8 @@ const [events, setEvents] = useState([]);
 const [currentNOE, setCurrentNOE] = useState(32);
 const [allLocations, setAllLocations] = useState([]);
 const [currentCity, setCurrentCity] = useState("See all cities");
+const [errorAlert, setErrorAlert] = useState(""); 
+
 
 useEffect(() => {
   fetchData();
@@ -30,7 +32,7 @@ return (
   <div className="App">
     <EventList events={events} />
     <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity}/>
-    <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE}/>
+    <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
     
   </div>
     
