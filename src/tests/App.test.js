@@ -53,15 +53,18 @@ describe('<App /> integration', () => {
     const user = userEvent.setup();
     const AppComponent = render(<App />);
     const AppDOM = AppComponent.container.firstChild;
-
+    console.log(AppDOM.innerHTML); // Debugging: Inspect the DOM
+  
     const NumberOfEventsDOM = AppDOM.querySelector('#numberOfEvents');
-    const NumberOfEventsInput = within(NumberOfEventsDOM).queryByTestId('number');
-
+    expect(NumberOfEventsDOM).toBeInTheDocument(); // Ensure the container exists
+  
+    const NumberOfEventsInput = within(NumberOfEventsDOM).queryByTestId('numberOfEventsInput');
+    expect(NumberOfEventsInput).toBeInTheDocument(); // Ensure the input exists
+  
     await user.type(NumberOfEventsInput, '{backspace}{backspace}10');
-
+  
     const EventListDOM = AppDOM.querySelector('#event-list');
     const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');
     expect(allRenderedEventItems.length).toBe(10);
-  });
-
+  }); 
 });
