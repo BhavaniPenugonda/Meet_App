@@ -68,8 +68,9 @@ defineFeature(feature, test => {
       expect(suggestionListItems).toHaveLength(2); 
     });
 
-    when('the user selects a city (e.g., “Berlin, Germany”) from the list', () => {
-
+    when('the user selects a city (e.g., “Berlin, Germany”) from the list', async() => {
+      const user = userEvent.setup();
+      await user.click(suggestionListItems[0]);
     });
 
     then('their city should be changed to that city (i.e., “Berlin, Germany”)', () => {
