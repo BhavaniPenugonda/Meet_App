@@ -48,8 +48,18 @@ defineFeature(feature, test => {
       expect(suggestionListItems).toHaveLength(2);
     });
   });
+  let AppComponent;
+    let AppDOM; 
+    let CitySearchDOM;
+    let citySearchInput;
   test('User can select a city from the suggested list.', ({ given, and, when, then }) => {
-    given('user was typing “Berlin” in the city textbox', () => {
+    given('user was typing “Berlin” in the city textbox', async() => {
+      AppComponent = render(<App />);
+      const user = userEvent.setup();
+      AppDOM = AppComponent.container.firstChild;
+      CitySearchDOM = AppDOM.querySelector('#city-search');
+      citySearchInput = within(CitySearchDOM).queryByRole('textbox');  
+      await user.type(citySearchInput, "Berlin");
 
     });
 
