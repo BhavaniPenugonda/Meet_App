@@ -55,6 +55,7 @@ defineFeature(feature, test => {
       AppDOM = AppComponent.container.firstChild;
       const eventDetails = AppDOM.querySelector('.details');
       expect(eventDetails).toBeInTheDocument();
+      
     });
   });
   test('User can collapse an event to hide details', ({ given, when, then }) => {

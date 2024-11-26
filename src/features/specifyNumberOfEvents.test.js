@@ -3,7 +3,6 @@ import NumberOfEvents from "../components/NumberOfEvents";
 import App from "../App";
 import { render,within,waitFor} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import NumberOfEvents from "../components/NumberOfEvents";
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
 
