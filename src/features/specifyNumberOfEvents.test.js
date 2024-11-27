@@ -1,7 +1,7 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import NumberOfEvents from "../components/NumberOfEvents";
 import App from "../App";
-import { render,within,waitFor} from "@testing-library/react";
+import { render,within,waitFor,screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
@@ -44,14 +44,15 @@ defineFeature(feature, test => {
     });
 
     when(/^the user specifies a new number of events to display \(e.g., (\d+)\)$/, async(arg0) => {
-      NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />)
+     // NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />)
       const user = userEvent.setup();
-      const numberOfEvents = NumberOfEventsComponent.getByRole('textbox');
+      const numberOfEvents = document.querySelector('.number');
       await user.type(numberOfEvents, '{backspace}{backspace}10'); 
     });
 
     then('the app should update the event list to show the specified number of events', () => {
-      expect(NumberOfEventsComponent.getByRole('textbox')).toHaveValue('10'); 
+  
+      expect(document.querySelector('.number')).toHaveValue('10'); 
     });
   });
 
