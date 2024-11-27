@@ -1,5 +1,5 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
-import { render ,within,waitFor} from '@testing-library/react';
+import { render ,within,waitFor,screen} from '@testing-library/react';
 import App from '../App';
 import { getEvents } from '../api';
 import userEvent from '@testing-library/user-event';
@@ -45,17 +45,18 @@ defineFeature(feature, test => {
           });
     });
 
-    when('the user clicks on the expand button of the event', async() => {
+    when('the user clicks on the expand button of the event', () => {
       const user = userEvent.setup();
-      const showDetails = AppComponent.queryByText('Show Details');
-      await user.click(showDetails);
+      const showDetails = screen.queryByText('Show Details');
+      user.click(showDetails);
     });
 
-    then('the event should expand to show its details', () => {
-      AppDOM = AppComponent.container.firstChild;
+    then('the event should expand to show its details', async() => {
+      await waitFor(() => {
       const eventDetails = AppDOM.querySelector('.details');
-      expect(eventDetails).toBeInTheDocument();
       
+      expect(eventDetails).toBeInTheDocument();
+      });
     });
   });
   test('User can collapse an event to hide details', ({ given, when, then }) => {
@@ -77,10 +78,11 @@ defineFeature(feature, test => {
     });
 
     then('the event should collapse to hide its details', () => {
-      AppDOM = AppComponent.container.firstChild;
-      const eventDetails = AppDOM.querySelector('.details');
+
+     const eventDetails = AppDOM.querySelector('.details');
       expect(eventDetails).not.toBeInTheDocument();
     });
+
   });
 
 
