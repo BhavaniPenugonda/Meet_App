@@ -30,9 +30,10 @@ const fetchData = async () => {
 
 return (
   <div className="App">
-    <EventList events={events} />
+    
     <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity}/>
     <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+    <EventList events={events} />
     
   </div>
     
