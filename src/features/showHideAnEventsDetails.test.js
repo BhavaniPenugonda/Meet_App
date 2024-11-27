@@ -35,23 +35,26 @@ defineFeature(feature, test => {
   });
 
   test('User can expand an event to see details.', ({ given, when, then }) => {
+    let EventListItems;
     given('the user has opened the event list', async() => {
       AppComponent = render(<App />);
       AppDOM = AppComponent.container.firstChild;
       EventListDOM = AppDOM.querySelector('#event-list');
       await waitFor(() => {
-            const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+            EventListItems = within(EventListDOM).queryAllByRole('listitem');
             expect(EventListItems.length).toBe(32);
           });
     });
 
     when('the user clicks on the expand button of the event', () => {
       const user = userEvent.setup();
-      const showDetails = screen.queryByText('Show Details');
+      const firstEvent = EventListItems[0];
+      const showDetails = within(firstEvent).queryByText('Show details');
       user.click(showDetails);
     });
 
     then('the event should expand to show its details', async() => {
+      AppDOM = AppComponent.container.firstChild;
       await waitFor(() => {
       const eventDetails = AppDOM.querySelector('.details');
       
