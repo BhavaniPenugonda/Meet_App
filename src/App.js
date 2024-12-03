@@ -5,7 +5,7 @@ import './App.css';
 import NumberOfEvents from './components/NumberOfEvents';
 import { useEffect, useState } from 'react';
 import {extractLocations, getEvents } from './api';
-import { InfoAlert } from './components/Alert';
+import { InfoAlert ,ErrorAlert} from './components/Alert';
 
 const App = () => {
 
@@ -34,6 +34,7 @@ return (
   <div className="App">
     <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
       </div>
     <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
     <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
