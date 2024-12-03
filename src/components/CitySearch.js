@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import { InfoAlert } from './components/Alert';
+
 
 const CitySearch = ({ allLocations ,setCurrentCity,setInfoAlert}) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
