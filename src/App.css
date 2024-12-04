@@ -88,9 +88,11 @@ input[type="number"] {
 }
 
 .alerts-container {
-  position: fixed;
+ /* position: fixed;
   top: 0px;
-  left: 20px;
+  left: 20px;*/
+  flex-direction: column;
+
   width: 250px;
   z-index: 1000;
 }
