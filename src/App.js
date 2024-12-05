@@ -5,7 +5,7 @@ import './App.css';
 import NumberOfEvents from './components/NumberOfEvents';
 import { useEffect, useState } from 'react';
 import {extractLocations, getEvents } from './api';
-import { InfoAlert ,ErrorAlert} from './components/Alert';
+import { InfoAlert ,ErrorAlert,WarningAlert} from './components/Alert';
 
 const App = () => {
 
@@ -15,9 +15,18 @@ const [allLocations, setAllLocations] = useState([]);
 const [currentCity, setCurrentCity] = useState("See all cities");
 const [errorAlert, setErrorAlert] = useState(""); 
 const [infoAlert, setInfoAlert] = useState("");
+const [warningAlert, setWarningAlert] = useState("");
+
 
 
 useEffect(() => {
+  let warningText;
+  if (navigator.onLine) {
+    warningText = ""
+  } else {
+    warningText ="You are offline. Some features may not work"
+  }
+  setWarningAlert(warningText);
   fetchData();
 }, [currentCity,currentNOE]);
 
@@ -38,6 +47,7 @@ return (
     <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
     <EventList events={events} />
     
