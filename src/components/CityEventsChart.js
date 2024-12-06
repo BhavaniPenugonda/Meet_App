@@ -6,13 +6,13 @@ const CityEventsChart = ({ allLocations, events }) => {
 
   useEffect(() => {
     setData(getData());
-  }, [`${events}`]);
+  }, [`${data}`]);
 
   const getData = () => {
     const data = allLocations.map((location) => {
     const count = events.filter((event) => event.location === location).length
       const city = location.split(', ')[0]
-      return { count, number };
+      return {city,count };
     })
     return data;
   };
