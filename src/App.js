@@ -45,11 +45,14 @@ return (
     <h1>Meet App</h1>
     <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
     <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
-    <CityEventsChart allLocations={allLocations} events={events} />
+    
     <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
+      </div>
+      <div className="charts-container">
+      <CityEventsChart allLocations={allLocations} events={events} />
       </div>
     <EventList events={events} />
     
